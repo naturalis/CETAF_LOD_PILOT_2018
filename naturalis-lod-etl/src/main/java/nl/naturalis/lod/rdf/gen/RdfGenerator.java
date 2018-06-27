@@ -17,7 +17,7 @@ public class RdfGenerator {
 
   public static void main(String[] args) throws JsonParseException, IOException {
     JsonFactory jsonF = new JsonFactory();
-    JsonParser jp = jsonF.createParser(new File("/home/ayco/tmp/sp.json"));
+    JsonParser jp = jsonF.createParser(new File("/home/ayco/tmp/sp2.json"));
     if (jp.nextToken() != START_ARRAY) {
       throw new RuntimeException("Cannot parse contents of file. Expected " + START_ARRAY);
     }
@@ -58,8 +58,7 @@ public class RdfGenerator {
     while (jp.currentToken() != END_OBJECT) {
       String key = jp.getCurrentName();
       jp.nextToken();
-      Object val = readValue(jp);
-      map.put(key, val);
+      map.put(key, readValue(jp));
       jp.nextToken();
     }
     return map;
