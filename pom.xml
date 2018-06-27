@@ -18,6 +18,7 @@
 	
 	<modules>
 		<module>naturalis-lod-etl</module>
+		<module>naturalis-lod-util</module>
 	</modules>
 
 	<dependencyManagement>
