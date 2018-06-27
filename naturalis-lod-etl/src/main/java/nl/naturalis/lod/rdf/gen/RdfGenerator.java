@@ -15,7 +15,7 @@ public class RdfGenerator {
     JsonObjectHandler h = (obj) -> {
       System.out.println(obj.keySet().size());
     };
-    JsonStreamProcessor josp = JsonStreamProcessor.forFile(f, h);
+    JsonStreamProcessor josp = JsonStreamProcessor.create(f, h);
     josp.process();
   }
 

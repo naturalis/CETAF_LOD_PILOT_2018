@@ -5,6 +5,9 @@ import static com.fasterxml.jackson.core.JsonToken.END_OBJECT;
 import static com.fasterxml.jackson.core.JsonToken.START_ARRAY;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.Reader;
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -27,11 +30,30 @@ import com.fasterxml.jackson.core.JsonParser;
  */
 public class JsonStreamProcessor {
 
-  public static JsonStreamProcessor forFile(File f, JsonObjectHandler h)
+  public static JsonStreamProcessor create(InputStream is, JsonObjectHandler h)
+      throws JsonParseException, IOException {
+    JsonFactory jsonF = new JsonFactory();
+    JsonParser jp = jsonF.createParser(is);
+    return new JsonStreamProcessor(jp, h);
+  }
+
+  public static JsonStreamProcessor create(Reader r, JsonObjectHandler h)
+      throws JsonParseException, IOException {
+    JsonFactory jsonF = new JsonFactory();
+    JsonParser jp = jsonF.createParser(r);
+    return new JsonStreamProcessor(jp, h);
+  }
+
+  public static JsonStreamProcessor create(File f, JsonObjectHandler h)
       throws JsonParseException, IOException {
     JsonFactory jsonF = new JsonFactory();
     JsonParser jp = jsonF.createParser(f);
     return new JsonStreamProcessor(jp, h);
+  }
+
+  public static JsonStreamProcessor create(String s, JsonObjectHandler h)
+      throws JsonParseException, IOException {
+    return create(new StringReader(s), h);
   }
 
   private final JsonParser p;

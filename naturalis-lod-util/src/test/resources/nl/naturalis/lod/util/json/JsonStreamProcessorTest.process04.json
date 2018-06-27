@@ -1,0 +1,19 @@
+[
+	{
+		"firstName": "John",
+		"lastName": "Smith",
+		"hobbys": [
+			"Tennis",
+			"Hockey",
+			"Bridge"
+		]
+	},
+	{
+		"firstName": "Jack",
+		"lastName": "Jackson",
+		"hobbys": [
+			"Swimming",
+			"Reading"
+		]
+	}
+]
