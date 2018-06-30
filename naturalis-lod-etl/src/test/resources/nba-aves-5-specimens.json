@@ -1,0 +1,471 @@
+[
+	{
+		"sourceSystem": {
+			"code": "CRS",
+			"name": "Naturalis - Zoology and Geology catalogues"
+		},
+		"sourceSystemId": "RMNH.5000004.a",
+		"id": "RMNH.5000004.a@CRS",
+		"unitID": "RMNH.5000004.a",
+		"unitGUID": "http://data.biodiversitydata.nl/naturalis/specimen/RMNH.5000004.a",
+		"sourceInstitutionID": "Naturalis Biodiversity Center",
+		"sourceID": "CRS",
+		"owner": "Naturalis Biodiversity Center",
+		"licenseType": "Copyright",
+		"license": "CC0",
+		"recordBasis": "PreservedSpecimen",
+		"kindOfUnit": "skin",
+		"collectionType": "Aves",
+		"sex": "male",
+		"preparationType": "study skin",
+		"numberOfSpecimen": 1,
+		"fromCaptivity": false,
+		"objectPublic": true,
+		"multiMediaPublic": true,
+		"gatheringEvent": {
+			"country": "Al Maghrib",
+			"locality": "Tagdilt",
+			"localityText": "Morocco, Tagdilt",
+			"dateTimeBegin": "2012-03-14T00:00:00+0000",
+			"dateTimeEnd": "2012-03-14T00:00:00+0000",
+			"gatheringPersons": [
+				{
+					"fullName": "Berg, A. van den"
+				}
+			],
+			"siteCoordinates": [
+				{
+					"longitudeDecimal": -5.86,
+					"latitudeDecimal": 31.25,
+					"geoShape": {
+						"type": "Point",
+						"coordinates": [
+							-5.86,
+							31.25
+						]
+					}
+				}
+			]
+		},
+		"identifications": [
+			{
+				"taxonRank": "subspecies",
+				"scientificName": {
+					"fullScientificName": "Cursorius cursor cursor (Latham,1787)",
+					"genusOrMonomial": "Cursorius",
+					"specificEpithet": "cursor",
+					"infraspecificEpithet": "cursor",
+					"authorshipVerbatim": "Latham,1787",
+					"scientificNameGroup": "cursorius cursor cursor"
+				},
+				"defaultClassification": {
+					"family": "Glareolidae",
+					"genus": "Cursorius",
+					"specificEpithet": "cursor",
+					"infraspecificEpithet": "cursor"
+				},
+				"preferred": true
+			}
+		]
+	},
+	{
+		"sourceSystem": {
+			"code": "CRS",
+			"name": "Naturalis - Zoology and Geology catalogues"
+		},
+		"sourceSystemId": "RMNH.5000004.b",
+		"id": "RMNH.5000004.b@CRS",
+		"unitID": "RMNH.5000004.b",
+		"unitGUID": "http://data.biodiversitydata.nl/naturalis/specimen/RMNH.5000004.b",
+		"sourceInstitutionID": "Naturalis Biodiversity Center",
+		"sourceID": "CRS",
+		"owner": "Naturalis Biodiversity Center",
+		"licenseType": "Copyright",
+		"license": "CC0",
+		"recordBasis": "PreservedSpecimen",
+		"kindOfUnit": "Wing",
+		"collectionType": "Aves",
+		"sex": "male",
+		"preparationType": "study skin",
+		"numberOfSpecimen": 1,
+		"fromCaptivity": false,
+		"objectPublic": true,
+		"multiMediaPublic": true,
+		"gatheringEvent": {
+			"country": "Al Maghrib",
+			"locality": "Tagdilt",
+			"localityText": "Morocco, Tagdilt",
+			"dateTimeBegin": "2012-03-14T00:00:00+0000",
+			"dateTimeEnd": "2012-03-14T00:00:00+0000",
+			"gatheringPersons": [
+				{
+					"fullName": "Berg, A. van den"
+				}
+			],
+			"siteCoordinates": [
+				{
+					"longitudeDecimal": -5.86,
+					"latitudeDecimal": 31.25,
+					"geoShape": {
+						"type": "Point",
+						"coordinates": [
+							-5.86,
+							31.25
+						]
+					}
+				}
+			]
+		},
+		"identifications": [
+			{
+				"taxonRank": "subspecies",
+				"scientificName": {
+					"fullScientificName": "Cursorius cursor cursor (Latham,1787)",
+					"genusOrMonomial": "Cursorius",
+					"specificEpithet": "cursor",
+					"infraspecificEpithet": "cursor",
+					"authorshipVerbatim": "Latham,1787",
+					"scientificNameGroup": "cursorius cursor cursor"
+				},
+				"defaultClassification": {
+					"family": "Glareolidae",
+					"genus": "Cursorius",
+					"specificEpithet": "cursor",
+					"infraspecificEpithet": "cursor"
+				},
+				"preferred": true
+			}
+		]
+	},
+	{
+		"sourceSystem": {
+			"code": "CRS",
+			"name": "Naturalis - Zoology and Geology catalogues"
+		},
+		"sourceSystemId": "RMNH.5000004.c",
+		"id": "RMNH.5000004.c@CRS",
+		"unitID": "RMNH.5000004.c",
+		"unitGUID": "http://data.biodiversitydata.nl/naturalis/specimen/RMNH.5000004.c",
+		"sourceInstitutionID": "Naturalis Biodiversity Center",
+		"sourceID": "CRS",
+		"owner": "Naturalis Biodiversity Center",
+		"licenseType": "Copyright",
+		"license": "CC0",
+		"recordBasis": "PreservedSpecimen",
+		"kindOfUnit": "tissue",
+		"collectionType": "Aves",
+		"sex": "male",
+		"preparationType": "wet specimen",
+		"numberOfSpecimen": 1,
+		"fromCaptivity": false,
+		"objectPublic": true,
+		"multiMediaPublic": true,
+		"gatheringEvent": {
+			"country": "Al Maghrib",
+			"locality": "Tagdilt",
+			"localityText": "Morocco, Tagdilt",
+			"dateTimeBegin": "2012-03-14T00:00:00+0000",
+			"dateTimeEnd": "2012-03-14T00:00:00+0000",
+			"gatheringPersons": [
+				{
+					"fullName": "Berg, A. van den"
+				}
+			],
+			"siteCoordinates": [
+				{
+					"longitudeDecimal": -5.86,
+					"latitudeDecimal": 31.25,
+					"geoShape": {
+						"type": "Point",
+						"coordinates": [
+							-5.86,
+							31.25
+						]
+					}
+				}
+			]
+		},
+		"identifications": [
+			{
+				"taxonRank": "subspecies",
+				"scientificName": {
+					"fullScientificName": "Cursorius cursor cursor (Latham,1787)",
+					"genusOrMonomial": "Cursorius",
+					"specificEpithet": "cursor",
+					"infraspecificEpithet": "cursor",
+					"authorshipVerbatim": "Latham,1787",
+					"scientificNameGroup": "cursorius cursor cursor"
+				},
+				"defaultClassification": {
+					"family": "Glareolidae",
+					"genus": "Cursorius",
+					"specificEpithet": "cursor",
+					"infraspecificEpithet": "cursor"
+				},
+				"preferred": true
+			}
+		]
+	},
+	{
+		"sourceSystem": {
+			"code": "CRS",
+			"name": "Naturalis - Zoology and Geology catalogues"
+		},
+		"sourceSystemId": "RMNH.5000005.a",
+		"id": "RMNH.5000005.a@CRS",
+		"unitID": "RMNH.5000005.a",
+		"unitGUID": "http://data.biodiversitydata.nl/naturalis/specimen/RMNH.5000005.a",
+		"sourceInstitutionID": "Naturalis Biodiversity Center",
+		"sourceID": "CRS",
+		"owner": "Naturalis Biodiversity Center",
+		"licenseType": "Copyright",
+		"license": "CC0",
+		"recordBasis": "PreservedSpecimen",
+		"kindOfUnit": "skin",
+		"collectionType": "Aves",
+		"sex": "female",
+		"preparationType": "study skin",
+		"numberOfSpecimen": 1,
+		"fromCaptivity": false,
+		"objectPublic": true,
+		"multiMediaPublic": true,
+		"gatheringEvent": {
+			"country": "Nederland",
+			"provinceState": "Zeeland",
+			"locality": "Westenschouwen",
+			"localityText": "The Netherlands, Zeeland, Westerschouwen",
+			"dateTimeBegin": "2009-07-25T00:00:00+0000",
+			"dateTimeEnd": "2009-07-25T00:00:00+0000"
+		},
+		"identifications": [
+			{
+				"taxonRank": "species",
+				"scientificName": {
+					"fullScientificName": "Prunella modularis  (Linnaeus, 1758)",
+					"genusOrMonomial": "Prunella",
+					"specificEpithet": "modularis",
+					"authorshipVerbatim": "Linnaeus, 1758",
+					"scientificNameGroup": "prunella modularis"
+				},
+				"defaultClassification": {
+					"family": "Prunellidae",
+					"genus": "Prunella",
+					"specificEpithet": "modularis"
+				},
+				"taxonomicEnrichments": [
+					{
+						"vernacularNames": [
+							{
+								"name": "Dunnock",
+								"language": "English"
+							}
+						],
+						"sourceSystem": {
+							"code": "COL"
+						},
+						"taxonId": "27747961@COL"
+					},
+					{
+						"vernacularNames": [
+							{
+								"name": "Winterzanger",
+								"language": "Dutch"
+							},
+							{
+								"name": "Bastaardnachtegaal",
+								"language": "Dutch"
+							},
+							{
+								"name": "Heggemuschje",
+								"language": "Dutch"
+							},
+							{
+								"name": "Heggerienken",
+								"language": "Dutch"
+							},
+							{
+								"name": "Blauwpieper",
+								"language": "Dutch"
+							},
+							{
+								"name": "Boerennachtegaal",
+								"language": "Dutch"
+							},
+							{
+								"name": "Pieperke",
+								"language": "Dutch"
+							},
+							{
+								"name": "Grauwpieper",
+								"language": "Dutch"
+							},
+							{
+								"name": "Dorenkruiper",
+								"language": "Dutch"
+							},
+							{
+								"name": "Heggemus",
+								"language": "Dutch"
+							},
+							{
+								"name": "Heggenmus",
+								"language": "Dutch"
+							}
+						],
+						"synonyms": [
+							{
+								"fullScientificName": "Accentor modularis L.",
+								"taxonomicStatus": "synonym",
+								"genusOrMonomial": "Accentor",
+								"specificEpithet": "modularis",
+								"authorshipVerbatim": "L."
+							},
+							{
+								"fullScientificName": "Sylvia modularis",
+								"taxonomicStatus": "synonym",
+								"genusOrMonomial": "Sylvia",
+								"specificEpithet": "modularis"
+							}
+						],
+						"sourceSystem": {
+							"code": "NSR"
+						},
+						"taxonId": "464943043@NSR"
+					}
+				],
+				"preferred": true
+			}
+		]
+	},
+	{
+		"sourceSystem": {
+			"code": "CRS",
+			"name": "Naturalis - Zoology and Geology catalogues"
+		},
+		"sourceSystemId": "RMNH.5000005.b",
+		"id": "RMNH.5000005.b@CRS",
+		"unitID": "RMNH.5000005.b",
+		"unitGUID": "http://data.biodiversitydata.nl/naturalis/specimen/RMNH.5000005.b",
+		"sourceInstitutionID": "Naturalis Biodiversity Center",
+		"sourceID": "CRS",
+		"owner": "Naturalis Biodiversity Center",
+		"licenseType": "Copyright",
+		"license": "CC0",
+		"recordBasis": "PreservedSpecimen",
+		"kindOfUnit": "Wing",
+		"collectionType": "Aves",
+		"sex": "female",
+		"preparationType": "study skin",
+		"numberOfSpecimen": 1,
+		"fromCaptivity": false,
+		"objectPublic": true,
+		"multiMediaPublic": true,
+		"gatheringEvent": {
+			"country": "Nederland",
+			"provinceState": "Zeeland",
+			"locality": "Westenschouwen",
+			"localityText": "The Netherlands, Zeeland, Westerschouwen",
+			"dateTimeBegin": "2009-07-25T00:00:00+0000",
+			"dateTimeEnd": "2009-07-25T00:00:00+0000"
+		},
+		"identifications": [
+			{
+				"taxonRank": "species",
+				"scientificName": {
+					"fullScientificName": "Prunella modularis  (Linnaeus, 1758)",
+					"genusOrMonomial": "Prunella",
+					"specificEpithet": "modularis",
+					"authorshipVerbatim": "Linnaeus, 1758",
+					"scientificNameGroup": "prunella modularis"
+				},
+				"defaultClassification": {
+					"family": "Prunellidae",
+					"genus": "Prunella",
+					"specificEpithet": "modularis"
+				},
+				"taxonomicEnrichments": [
+					{
+						"vernacularNames": [
+							{
+								"name": "Dunnock",
+								"language": "English"
+							}
+						],
+						"sourceSystem": {
+							"code": "COL"
+						},
+						"taxonId": "27747961@COL"
+					},
+					{
+						"vernacularNames": [
+							{
+								"name": "Winterzanger",
+								"language": "Dutch"
+							},
+							{
+								"name": "Bastaardnachtegaal",
+								"language": "Dutch"
+							},
+							{
+								"name": "Heggemuschje",
+								"language": "Dutch"
+							},
+							{
+								"name": "Heggerienken",
+								"language": "Dutch"
+							},
+							{
+								"name": "Blauwpieper",
+								"language": "Dutch"
+							},
+							{
+								"name": "Boerennachtegaal",
+								"language": "Dutch"
+							},
+							{
+								"name": "Pieperke",
+								"language": "Dutch"
+							},
+							{
+								"name": "Grauwpieper",
+								"language": "Dutch"
+							},
+							{
+								"name": "Dorenkruiper",
+								"language": "Dutch"
+							},
+							{
+								"name": "Heggemus",
+								"language": "Dutch"
+							},
+							{
+								"name": "Heggenmus",
+								"language": "Dutch"
+							}
+						],
+						"synonyms": [
+							{
+								"fullScientificName": "Accentor modularis L.",
+								"taxonomicStatus": "synonym",
+								"genusOrMonomial": "Accentor",
+								"specificEpithet": "modularis",
+								"authorshipVerbatim": "L."
+							},
+							{
+								"fullScientificName": "Sylvia modularis",
+								"taxonomicStatus": "synonym",
+								"genusOrMonomial": "Sylvia",
+								"specificEpithet": "modularis"
+							}
+						],
+						"sourceSystem": {
+							"code": "NSR"
+						},
+						"taxonId": "464943043@NSR"
+					}
+				],
+				"preferred": true
+			}
+		]
+	}
+]
