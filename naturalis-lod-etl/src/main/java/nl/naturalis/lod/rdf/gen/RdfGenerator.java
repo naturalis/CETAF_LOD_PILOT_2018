@@ -1,6 +1,5 @@
 package nl.naturalis.lod.rdf.gen;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -17,7 +16,8 @@ public class RdfGenerator {
     JsonObjectHandler h = (obj) -> {
       System.out.println(obj.keySet().size());
     };
-    InputStream is = RdfGenerator.class.getResourceAsStream("/nba-aves-5-specimens.json");
+    InputStream is = RdfGenerator.class.getResourceAsStream("/nba-aves-2-specimens.json");
+    System.out.println("XXXXX: " + is);
     JsonStreamProcessor josp = JsonStreamProcessor.create(is, h);
     josp.process();
   }
