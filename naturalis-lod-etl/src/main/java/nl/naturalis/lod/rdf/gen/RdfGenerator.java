@@ -13,12 +13,9 @@ public class RdfGenerator {
 
   public static void main(String[] args)
       throws JsonParseException, IOException, JsonStreamException {
-    JsonObjectHandler h = (obj) -> {
-      System.out.println(obj.keySet().size());
-    };
-    InputStream is = RdfGenerator.class.getResourceAsStream("/nba-aves-2-specimens.json");
-    System.out.println("XXXXX: " + is);
-    JsonStreamProcessor josp = JsonStreamProcessor.create(is, h);
+	  SpecimenRdfGenerator srg = new SpecimenRdfGenerator();
+    InputStream is = RdfGenerator.class.getResourceAsStream("/nba-aves-1-specimen.json");
+    JsonStreamProcessor josp = JsonStreamProcessor.create(is, srg);
     josp.process();
   }
 
