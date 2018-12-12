@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
@@ -14,8 +13,8 @@
 		<!-- Library dependencies -->
 		<!-- *** Check for updates: mvn versions:display-dependency-updates -->
 		<!-- *** Check dependencies: mvn dependency:analyze -->
-		<jackson.version>2.9.6</jackson.version>
-		<rdf4j.version>2.3.2</rdf4j.version>
+		<jackson.version>2.9.7</jackson.version>
+		<rdf4j.version>2.4.2</rdf4j.version>
 		<junit.version>4.12</junit.version>
 	</properties>
 
@@ -26,21 +25,51 @@
 
 	<dependencyManagement>
 		<dependencies>
+		
 			<dependency>
 				<groupId>com.fasterxml.jackson.core</groupId>
-				<artifactId>jackson-databind</artifactId>
+				<artifactId>jackson-core</artifactId>
 				<version>${jackson.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-annotations</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>org.eclipse.rdf4j</groupId>
 				<artifactId>rdf4j-runtime</artifactId>
 				<version>${rdf4j.version}</version>
 			</dependency>
 			<dependency>
+				<groupId>org.eclipse.rdf4j</groupId>
+				<artifactId>rdf4j-repository-api</artifactId>
+				<version>${rdf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.eclipse.rdf4j</groupId>
+				<artifactId>rdf4j-model</artifactId>
+				<version>${rdf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.eclipse.rdf4j</groupId>
+				<artifactId>rdf4j-storage</artifactId>
+				<version>${rdf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.eclipse.rdf4j</groupId>
+				<artifactId>rdf4j-rio-api</artifactId>
+				<version>${rdf4j.version}</version>
+			</dependency>
+
+			<!-- TEST scope -->
+			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>${junit.version}</version>
 			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
@@ -53,8 +82,17 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
-					<encoding>utf8</encoding>
+					<encoding>UTF8</encoding>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>versions-maven-plugin</artifactId>
+				<version>2.5</version>
 			</plugin>
 		</plugins>
 	</build>
