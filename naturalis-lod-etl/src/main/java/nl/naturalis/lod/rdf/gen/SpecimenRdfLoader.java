@@ -21,7 +21,7 @@ public class SpecimenRdfLoader implements JsonObjectHandler, AutoCloseable {
 
 	private static final ValueFactory vf = SimpleValueFactory.getInstance();
 
-	private final RepositoryConnection con;
+	private static final String PURL_BASE_URL = "http://data.biodiversitydata.nl/naturalis/specimen/";
 
 	private static final Path PATH_UNIT_ID = new Path("unitID");
 	private static final Path PATH_SCIENTIFIC_NAME = new Path("identifications.0.scientificName.fullScientificName");
@@ -32,6 +32,8 @@ public class SpecimenRdfLoader implements JsonObjectHandler, AutoCloseable {
 	private static final Path PATH_MULTIMEDIA = new Path("associatedMultiMediaUris");
 	private static final Path PATH_LATITUDE = new Path("gatheringEvent.siteCoordinates.0.latitudeDecimal");
 	private static final Path PATH_LONGITUDE = new Path("gatheringEvent.siteCoordinates.0.longitudeDecimal");
+
+	private final RepositoryConnection con;
 
 	public SpecimenRdfLoader() {
 		String path = System.getProperty("user.home") + "/rdf4j-specimens";
@@ -48,9 +50,9 @@ public class SpecimenRdfLoader implements JsonObjectHandler, AutoCloseable {
 	public void handle(Map<String, Object> map) {
 		MapReader mr = new MapReader(map);
 		String unitID = (String) mr.read(PATH_UNIT_ID);
-		IRI subject = vf.createIRI("http://data.biodiversitydata.nl/naturalis/specimen/" + unitID);
+		IRI subject = iri(PURL_BASE_URL + unitID);
 		String val = readMap(mr, PATH_SCIENTIFIC_NAME);
-		con.add(subject, iri("dc:title"), vf.createLiteral(val));
+		con.add(subject, iri("dc:title"), str(val));
 		if ((val = readMap(mr, PATH_FAMILY)) != null) {
 			con.add(subject, iri("dwc:family"), str(val));
 		}
