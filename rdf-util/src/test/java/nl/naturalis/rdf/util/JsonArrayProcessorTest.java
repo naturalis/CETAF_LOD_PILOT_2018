@@ -1,4 +1,4 @@
-package nl.naturalis.lod.util.json;
+package nl.naturalis.rdf.util;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
@@ -15,8 +15,7 @@ import nl.naturalis.rdf.util.JsonStreamException;
 
 import com.fasterxml.jackson.core.JsonParseException;
 
-@SuppressWarnings("static-method")
-public class JsonStreamProcessorTest {
+public class JsonArrayProcessorTest {
 
   @Test
   public void process01() throws JsonParseException, IOException, JsonStreamException {

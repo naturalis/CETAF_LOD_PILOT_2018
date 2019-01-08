@@ -57,29 +57,29 @@ public class SpecimenRdfLoader implements JsonObjectHandler, AutoCloseable {
     String unitID = (String) mapReader.read(PATH_UNIT_ID);
     IRI subject = iri(PURL_BASE_URL + unitID);
     String val = readMap(mapReader, PATH_SCIENTIFIC_NAME);
-    con.add(subject, iri("dc:title"), str(val));
+    con.add(subject, iri("dc:title"), stringLiteral(val));
     if ((val = readMap(mapReader, PATH_FAMILY)) != null) {
-      con.add(subject, iri("dwc:family"), str(val));
+      con.add(subject, iri("dwc:family"), stringLiteral(val));
     }
     if ((val = readMap(mapReader, PATH_RECORD_BASIS)) != null) {
-      con.add(subject, iri("dc:type"), str(val));
+      con.add(subject, iri("dc:type"), stringLiteral(val));
     }
     if ((val = readMap(mapReader, PATH_COLLECTOR)) != null) {
-      con.add(subject, iri("dwc:recordedBy"), str(val));
+      con.add(subject, iri("dwc:recordedBy"), stringLiteral(val));
     }
     if ((val = readMap(mapReader, PATH_COLLECTOR_FIELDNO)) != null) {
-      con.add(subject, iri("dwc:fieldNumber"), str(val));
+      con.add(subject, iri("dwc:fieldNumber"), stringLiteral(val));
     }
     Object obj = mapReader.read(PATH_MULTIMEDIA);
     if (obj != null && obj != MapReader.MISSING_VALUE) {
       String url = ((List<Object>) obj).get(0).toString();
-      con.add(subject, iri("dwc:associatedMedia"), str(url));
+      con.add(subject, iri("dwc:associatedMedia"), stringLiteral(url));
     }
     if ((val = readMap(mapReader, PATH_LATITUDE)) != null) {
-      con.add(subject, iri("dwc:decimalLatitude"), dbl(val));
+      con.add(subject, iri("dwc:decimalLatitude"), doubleLiteral(val));
     }
     if ((val = readMap(mapReader, PATH_LONGITUDE)) != null) {
-      con.add(subject, iri("dwc:decimalLongitude"), dbl(val));
+      con.add(subject, iri("dwc:decimalLongitude"), doubleLiteral(val));
     }
   }
 
@@ -97,11 +97,11 @@ public class SpecimenRdfLoader implements JsonObjectHandler, AutoCloseable {
     return vf.createIRI(s);
   }
 
-  private static Literal str(String s) {
+  private static Literal stringLiteral(String s) {
     return vf.createLiteral(s);
   }
 
-  private static Literal dbl(String s) {
+  private static Literal doubleLiteral(String s) {
     return vf.createLiteral(Double.valueOf(s));
   }
 

@@ -17,8 +17,8 @@ public class SpecimenImporter {
     // SpecimenRdfGenerator srg = new SpecimenRdfGenerator();
     try (SpecimenRdfLoader loader = new SpecimenRdfLoader()) {
       InputStream is = SpecimenImporter.class.getResourceAsStream("/nba-aves-10-specimens.json");
-      JsonArrayProcessor jap = JsonArrayProcessor.create(is, loader);
-      jap.process();
+      JsonArrayProcessor jsonArrayProcessor = JsonArrayProcessor.create(is, loader);
+      jsonArrayProcessor.process();
     }
   }
 
