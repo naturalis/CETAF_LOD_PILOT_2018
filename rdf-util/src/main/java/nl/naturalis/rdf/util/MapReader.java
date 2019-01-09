@@ -9,15 +9,13 @@ public class MapReader {
 
   @SuppressWarnings({"unchecked", "rawtypes"})
   public static Object read(Map<String, Object> map, Path path) {
+    Object val;
     for (int i = 0; i < path.countElements(); ++i) {
-      Object val = map.get(path.getElement(i));
-      if (val == null) {
+      if ((val = map.get(path.getElement(i))) == null) {
         return map.containsKey(path.getElement(i)) ? null : MISSING_VALUE;
-      }
-      if (i == path.countElements() - 1) {
+      } else if (i == path.countElements() - 1) {
         return val;
-      }
-      if (val instanceof List) {
+      } else if (val instanceof List) {
         try {
           int idx = Integer.parseInt(path.getElement(i + 1));
           List list = (List) val;
@@ -36,10 +34,10 @@ public class MapReader {
       }
       map = (Map<String, Object>) val;
     }
-    /* Zero-length Path */ return map;
+    throw new IllegalArgumentException("Zero-length path not allowed");
   }
 
-  private final Map<String, Object> map;
+  private Map<String, Object> map;
 
   public MapReader(Map<String, Object> map) {
     this.map = map;

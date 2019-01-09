@@ -1,19 +1,17 @@
 package nl.naturalis.rdf.util;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import org.junit.Test;
-
-import nl.naturalis.rdf.util.JsonArrayProcessor;
-import nl.naturalis.rdf.util.JsonObjectHandler;
-import nl.naturalis.rdf.util.JsonStreamException;
 
 import com.fasterxml.jackson.core.JsonParseException;
+
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 public class JsonArrayProcessorTest {
 
@@ -58,7 +56,7 @@ public class JsonArrayProcessorTest {
     p.process();
     assertEquals("01", 2, h.collected.size());
   }
-  
+
 }
 
 

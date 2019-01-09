@@ -1,11 +1,7 @@
 package nl.naturalis.rdf.etl;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
-
-import com.fasterxml.jackson.core.JsonParseException;
 
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Model;
@@ -15,39 +11,20 @@ import org.eclipse.rdf4j.model.util.ModelBuilder;
 import org.eclipse.rdf4j.rio.RDFFormat;
 import org.eclipse.rdf4j.rio.Rio;
 
-import nl.naturalis.rdf.util.JsonArrayProcessor;
-import nl.naturalis.rdf.util.JsonObjectHandler;
-import nl.naturalis.rdf.util.JsonStreamException;
 import nl.naturalis.rdf.util.MapReader;
 import nl.naturalis.rdf.util.Path;
 
-import static nl.naturalis.rdf.etl.SpecimenRdfLoader.PATH_COLLECTOR;
-import static nl.naturalis.rdf.etl.SpecimenRdfLoader.PATH_COLLECTOR_FIELDNO;
-import static nl.naturalis.rdf.etl.SpecimenRdfLoader.PATH_FAMILY;
-import static nl.naturalis.rdf.etl.SpecimenRdfLoader.PATH_LATITUDE;
-import static nl.naturalis.rdf.etl.SpecimenRdfLoader.PATH_LONGITUDE;
-import static nl.naturalis.rdf.etl.SpecimenRdfLoader.PATH_MULTIMEDIA;
-import static nl.naturalis.rdf.etl.SpecimenRdfLoader.PATH_RECORD_BASIS;
-import static nl.naturalis.rdf.etl.SpecimenRdfLoader.PATH_SCIENTIFIC_NAME;
-import static nl.naturalis.rdf.etl.SpecimenRdfLoader.PATH_UNIT_ID;
-
 /**
- * A JsonObjectHandler implementation that handles instances of the (NBA) Specimen class. The RDF triples extracted from a Specimen are
- * written to standard out. For demo/test purposes.
+ * Converts specimens (provided in the form of Map instances) to RDF, and writes the RDF to standard out. For demo, test and debug purposes.
  */
-public class SpecimenRdfConsoleWriter implements JsonObjectHandler {
+public class SpecimenRDFConsoleWriter implements SpecimenRDFWriter {
 
-  public static void main(String[] args) throws JsonParseException, IOException, JsonStreamException {
-    SpecimenRdfConsoleWriter writer = new SpecimenRdfConsoleWriter();
-    InputStream is = SpecimenImporter.class.getResourceAsStream("/nba-aves-10-specimens.json");
-    JsonArrayProcessor jap = JsonArrayProcessor.create(is, writer);
-    jap.process();
-  }
+  private final ModelBuilder builder;
+  private final ValueFactory vf;
 
-  private ModelBuilder builder;
-  private ValueFactory vf;
+  private int counter = 0;
 
-  public SpecimenRdfConsoleWriter() {
+  public SpecimenRDFConsoleWriter() {
     builder = new ModelBuilder();
     vf = SimpleValueFactory.getInstance();
     builder.setNamespace("dc", "http://purl.org/dc/terms/");
@@ -55,7 +32,7 @@ public class SpecimenRdfConsoleWriter implements JsonObjectHandler {
   }
 
   @Override
-  @SuppressWarnings("unchecked")
+  @SuppressWarnings("rawtypes")
   public void handle(Map<String, Object> map) {
     MapReader mr = new MapReader(map);
     String unitID = (String) mr.read(PATH_UNIT_ID);
@@ -76,7 +53,7 @@ public class SpecimenRdfConsoleWriter implements JsonObjectHandler {
     }
     Object obj = mr.read(PATH_MULTIMEDIA);
     if (obj != null && obj != MapReader.MISSING_VALUE) {
-      builder.add("dwc:associatedMedia", ((List<Object>) obj).get(0).toString());
+      builder.add("dwc:associatedMedia", ((List) obj).get(0).toString());
     }
     if ((val = readMap(mr, PATH_LATITUDE)) != null) {
       builder.add("dwc:decimalLatitude", val);
@@ -84,10 +61,13 @@ public class SpecimenRdfConsoleWriter implements JsonObjectHandler {
     if ((val = readMap(mr, PATH_LONGITUDE)) != null) {
       builder.add("dwc:decimalLongitude", val);
     }
-
     Model model = builder.build();
-
     Rio.write(model, System.out, RDFFormat.RDFXML);
+    ++counter;
+  }
+
+  public int counter() {
+    return counter;
   }
 
   private static String readMap(MapReader mr, Path p) {

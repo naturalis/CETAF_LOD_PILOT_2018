@@ -12,7 +12,12 @@
 	<artifactId>rdf-util</artifactId>
 
 	<dependencies>
-
+		<!-- NBA -->
+		<dependency>
+			<groupId>nl.naturalis.nba</groupId>
+			<artifactId>nl.naturalis.nba.common</artifactId>
+		</dependency>		
+		<!-- JSON -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
@@ -20,14 +25,21 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
 		</dependency>		
-		
+		<!-- LOGGING -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+		</dependency>
 		<!-- TEST scope -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 		</dependency>
-		
 	</dependencies>
 
 </project>

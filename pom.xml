@@ -13,9 +13,12 @@
 		<!-- Library dependencies -->
 		<!-- *** Check for updates: mvn versions:display-dependency-updates -->
 		<!-- *** Check dependencies: mvn dependency:analyze -->
+		<nba.version>2.18</nba.version>
 		<jackson.version>2.9.7</jackson.version>
 		<rdf4j.version>2.4.2</rdf4j.version>
+		<log4j.version>2.7</log4j.version>
 		<junit.version>4.12</junit.version>
+		<guava.version>27.0.1-jre</guava.version>
 	</properties>
 
 	<modules>
@@ -25,7 +28,28 @@
 
 	<dependencyManagement>
 		<dependencies>
-		
+			<!-- NBA -->
+			<dependency>
+				<groupId>nl.naturalis.nba</groupId>
+				<artifactId>nl.naturalis.nba.client</artifactId>
+				<version>${nba.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>nl.naturalis.nba</groupId>
+				<artifactId>nl.naturalis.nba.utils</artifactId>
+				<version>${nba.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>nl.naturalis.nba</groupId>
+				<artifactId>nl.naturalis.nba.api</artifactId>
+				<version>${nba.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>nl.naturalis.nba</groupId>
+				<artifactId>nl.naturalis.nba.common</artifactId>
+				<version>${nba.version}</version>
+			</dependency>
+			<!-- JSON -->
 			<dependency>
 				<groupId>com.fasterxml.jackson.core</groupId>
 				<artifactId>jackson-core</artifactId>
@@ -36,7 +60,18 @@
 				<artifactId>jackson-annotations</artifactId>
 				<version>${jackson.version}</version>
 			</dependency>
-
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+			<!-- LOGGING -->
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-core</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+			<!-- RDF4J -->
 			<dependency>
 				<groupId>org.eclipse.rdf4j</groupId>
 				<artifactId>rdf4j-runtime</artifactId>
@@ -62,14 +97,18 @@
 				<artifactId>rdf4j-rio-api</artifactId>
 				<version>${rdf4j.version}</version>
 			</dependency>
-
+			<!-- UTIL -->
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>${guava.version}</version>
+			</dependency>		
 			<!-- TEST scope -->
 			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>${junit.version}</version>
 			</dependency>
-
 		</dependencies>
 	</dependencyManagement>
 

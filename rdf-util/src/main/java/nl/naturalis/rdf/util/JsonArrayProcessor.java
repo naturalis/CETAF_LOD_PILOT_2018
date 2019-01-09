@@ -54,7 +54,7 @@ public class JsonArrayProcessor {
 
   private final JsonParser p;
   private final JsonObjectHandler h;
-
+  
   private JsonArrayProcessor(JsonParser parser, JsonObjectHandler handler) {
     this.p = parser;
     this.h = handler;
