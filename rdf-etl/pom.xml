@@ -39,6 +39,11 @@
 			<groupId>org.eclipse.rdf4j</groupId>
 			<artifactId>rdf4j-rio-api</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.blazegraph</groupId>
+			<artifactId>blazegraph-jar</artifactId>
+			<version>2.1.4</version>
+		</dependency>
 		<!-- UTIL -->
 		<dependency>
 			<groupId>com.google.guava</groupId>
